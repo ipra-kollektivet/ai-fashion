@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <p>
     <label>{{ label }}:</label>
     <BFormInput
       :placeholder="placeholder"
@@ -12,7 +12,7 @@
     <BFormInvalidFeedback>
       {{ errorMessage }}
     </BFormInvalidFeedback>
-  </div>
+  </p>
 </template>
 
 <script setup lang="ts">
