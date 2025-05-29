@@ -16,10 +16,12 @@ declare module 'vue' {
     BRow: typeof import('bootstrap-vue-next/components/BContainer')['BRow']
     BTab: typeof import('bootstrap-vue-next/components/BTabs')['BTab']
     BTabs: typeof import('bootstrap-vue-next/components/BTabs')['BTabs']
+    ClothingSelector: typeof import('./src/components/clothing/ClothingSelector.vue')['default']
     InputField: typeof import('./src/components/form/InputField.vue')['default']
     LoginForm: typeof import('./src/components/auth/LoginForm.vue')['default']
     LoginPopover: typeof import('./src/components/layout/LoginPopover.vue')['default']
     Navbar: typeof import('./src/components/layout/Navbar.vue')['default']
     RegisterForm: typeof import('./src/components/auth/RegisterForm.vue')['default']
+    Wardrobe: typeof import('./src/components/clothing/Wardrobe.vue')['default']
   }
 }
