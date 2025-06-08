@@ -4,7 +4,7 @@ An intelligent styling assistant application that provides personalized fashion 
 
 ## Description
 
-AI Stylist App is a modern web application that leverages artificial intelligence to help users discover their personal style and get customized fashion recommendations. The app analyzes user preferences, body type, and style goals to suggest outfits and styling tips.
+AI Stylist App is a modern web application that leverages artificial intelligence to help users discover their personal style and get customized fashion recommendations. The app analyzes user preferences and style goals to suggest outfits and styling tips.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ AI Stylist App is a modern web application that leverages artificial intelligenc
 1. Clone the repository:
 
 ```bash
-git clone https://gitlab.com/LagomOflyt/ai-stylist-app.git
+git clone git@github.com:ipra-kollektivet/ai-fashion.git
 cd ai-stylist-app
 ```
 
@@ -33,7 +33,7 @@ npm install
 # Connect to PostgreSQL as superuser
 psql -U postgres
 
-# Create database and user (already done based on your setup)
+# Create database and user
 CREATE DATABASE ai_stylist_dev;
 CREATE USER stylist_user WITH PASSWORD 'your-password';
 GRANT ALL PRIVILEGES ON DATABASE ai_stylist_dev TO stylist_user;
@@ -78,7 +78,7 @@ Your PostgreSQL database is configured with:
 
 - **Database**: `ai_stylist_dev`
 - **User**: `stylist_user`
-- **Password**: `slemapa`
+- **Password**: `your-password`
 - **Host**: `localhost`
 - **Port**: `5432`
 
