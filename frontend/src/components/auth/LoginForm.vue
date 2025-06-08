@@ -36,7 +36,9 @@ import { useForm } from 'vee-validate';
 import InputField from '../form/InputField.vue';
 import { emailSchema, passwordSchema } from '../../Schemas';
 import { useAuth } from '../../composables/useAuth';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const { login } = useAuth();
 
 const { values, handleSubmit, resetForm, isSubmitting, meta } = useForm({
@@ -75,6 +77,7 @@ const onSubmit = handleSubmit(async (values) => {
       login(data.token, data.user);
       // Reset form
       resetForm();
+      router.push('/');
 
       // Redirect to dashboard (optional)
       // router.push('/dashboard');

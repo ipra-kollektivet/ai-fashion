@@ -1,11 +1,17 @@
 <template>
   <p>
-    <label>{{ label }}:</label>
-    <BFormInput
+    <label style="font-weight: bold"
+      >{{ label }}
+
+      <span v-if="required" style="color: red">*</span>
+    </label>
+    <BFormSelect
       :placeholder="placeholder"
-      :type="type"
       :disabled="disabled"
+      form="form"
+      size="lg"
       :state="meta.valid ? null : false"
+      :options="options"
       v-model="value"
     />
 
@@ -17,7 +23,6 @@
 
 <script setup lang="ts">
 import { useField } from 'vee-validate';
-import { type InputType } from 'bootstrap-vue-next';
 import { toTypedSchema } from '@vee-validate/zod';
 import type { ZodSchema } from 'zod';
 
@@ -26,11 +31,13 @@ const props = defineProps<{
   name: string;
   label?: string;
   rules?: ZodSchema;
-  type?: InputType;
+  required?: boolean;
+  options: Array<{ value: string | null; text: string }>;
   disabled?: boolean;
 }>();
 
 const schema = props.rules ? toTypedSchema(props.rules) : undefined;
 
-const { value, errorMessage, meta } = useField<string>(props.name, schema, {});
+const { value, meta, errorMessage } = useField<string>(props.name, schema, {});
 </script>
+<style></style>

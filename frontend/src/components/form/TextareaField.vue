@@ -1,14 +1,14 @@
 <template>
   <p>
-    <label>{{ label }}:</label>
-    <BFormInput
+    <label style="font-weight: bold">{{ label }}</label>
+    <BFormTextarea
       :placeholder="placeholder"
-      :type="type"
       :disabled="disabled"
+      :rows="6"
       :state="meta.valid ? null : false"
       v-model="value"
     />
-
+    {{ value.length }}/250
     <BFormInvalidFeedback>
       {{ errorMessage }}
     </BFormInvalidFeedback>
@@ -17,7 +17,6 @@
 
 <script setup lang="ts">
 import { useField } from 'vee-validate';
-import { type InputType } from 'bootstrap-vue-next';
 import { toTypedSchema } from '@vee-validate/zod';
 import type { ZodSchema } from 'zod';
 
@@ -26,7 +25,6 @@ const props = defineProps<{
   name: string;
   label?: string;
   rules?: ZodSchema;
-  type?: InputType;
   disabled?: boolean;
 }>();
 
